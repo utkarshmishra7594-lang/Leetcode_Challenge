@@ -1,29 +1,45 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution {
-    public int romanToInt(String s) {
-        Map<Character, Integer> map = new HashMap<>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
+    public boolean isPalindrome(ListNode head) {
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
 
-        int total = 0;
-        for (int i = 0; i < s.length(); i++) {
-            int curr = map.get(s.charAt(i));
-            if (i + 1 < s.length()) {
-                int next = map.get(s.charAt(i + 1));
-                if (curr < next) {
-                    total -= curr;
-                } else {
-                    total += curr;
-                }
-            } else {
-                total += curr;
-            }
         }
-        return total;
+        ListNode secondHalf=reverse(slow);
+        ListNode firstHalf=head;
+        ListNode temp=secondHalf;
+        while(temp!=null){
+            if(firstHalf.val!=temp.val){
+                return false;
+            }
+            firstHalf=firstHalf.next;
+            temp=temp.next;
+        }
+        return true;
+
+
         
+    }
+    private ListNode reverse(ListNode head){
+        ListNode prev=null,curr=head;
+        while(curr!=null){
+            ListNode next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        return prev;
     }
 }
