@@ -1,0 +1,19 @@
+class Solution {
+    public int[] numberGame(int[] nums) {
+        Arrays.sort(nums);
+        int n=nums.length;
+        int[]arr=new int[n];
+        int idx=0;
+        for(int i=0;i<n;i+=2){
+            arr[idx]=nums[i+1];
+            idx++;
+            arr[idx]=nums[i];
+            idx++;
+
+        }
+        return arr;
+
+        
+
+    }
+}
