@@ -1,19 +1,22 @@
 class Solution {
-    public int[] numberGame(int[] nums) {
-        Arrays.sort(nums);
-        int n=nums.length;
-        int[]arr=new int[n];
-        int idx=0;
-        for(int i=0;i<n;i+=2){
-            arr[idx]=nums[i+1];
-            idx++;
-            arr[idx]=nums[i];
-            idx++;
-
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>>result=new ArrayList<>();
+        for(int row=0;row<numRows;row++){
+            List<Integer>currentRow=new ArrayList<>();
+            for(int col=0;col<=row;col++){
+                if(col==0 || col==row){
+                    currentRow.add(1);
+                }else{
+                    int val=result.get(row-1).get(col-1)+result.get(row-1).get(col);
+                    currentRow.add(val);
+                }
+                
+            }
+            result.add(currentRow);
+            
         }
-        return arr;
+        return result;
 
         
-
     }
 }
