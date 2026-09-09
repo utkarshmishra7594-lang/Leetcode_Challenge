@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
-select name,population,area
-from World
-where (area>=3000000) or (population>=25000000);
+select Distinct author_id as id
+from Views
+where author_id=viewer_id
+order by author_id;
