@@ -1,5 +1,4 @@
 # Write your MySQL query statement below
-select Distinct author_id as id
-from Views
-where author_id=viewer_id
-order by author_id;
+select tweet_id
+from Tweets
+where length(content)>15;
