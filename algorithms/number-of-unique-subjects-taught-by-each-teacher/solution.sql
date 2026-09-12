@@ -1,5 +1,4 @@
 # Write your MySQL query statement below
-select * 
-from Cinema
-where (id%2!=0) and (description<>"boring") 
-order by rating desc;
+select teacher_id,count(Distinct subject_id) as cnt
+from Teacher
+group by teacher_id;
