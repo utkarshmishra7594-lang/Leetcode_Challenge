@@ -1,13 +1,46 @@
-class Solution {
-    public int strStr(String haystack, String needle) {
-        int n = haystack.length();
-        int m = needle.length();
-        
-        for (int i = 0; i <= n - m; i++) {
-            if (haystack.substring(i, i + m).equals(needle)) {
-                return i;
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        // if (head==null){
+        //     return false;
+        // }
+        // ListNode slow=head;
+        // ListNode fast=head;
+        // while(fast!=null && fast.next!=null){
+        //     slow=slow.next;
+        //     fast=fast.next.next;
+        //     if(slow==fast){
+        //         return true;
+        //     }
+        // }
+        // return false;
+
+
+        if(head==null){
+            return false;
+        }
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+                return true;
             }
         }
-        return -1;
+        return false;
+
+    
+    
     }
 }
