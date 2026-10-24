@@ -10,7 +10,7 @@ https://leetcode.com/problems/xor-operation-in-an-array/
 
 ## Solution
 
-Automatically synchronized from LeetCode on October 18, 2026.
+Automatically synchronized from LeetCode on October 24, 2026.
 
 ## Complexity
 
