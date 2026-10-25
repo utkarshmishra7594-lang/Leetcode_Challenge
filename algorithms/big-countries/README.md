@@ -10,7 +10,7 @@ https://leetcode.com/problems/big-countries/
 
 ## Solution
 
-Automatically synchronized from LeetCode on September 14, 2026.
+Automatically synchronized from LeetCode on October 25, 2026.
 
 ## Complexity
 
