@@ -1,9 +1,12 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        seen = {}
+        n=len(nums)
+        freq={}
+        for index in range(0,n):
+            need=target-nums[index]
+            if need in freq:
+                return [index,freq[need]]
+            freq[nums[index]]=index
         
-        for i, num in enumerate(nums):
-            complement = target - num
-            if complement in seen:
-                return [seen[complement], i]
-            seen[num] = i
+
+
