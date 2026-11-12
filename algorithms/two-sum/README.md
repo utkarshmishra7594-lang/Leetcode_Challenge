@@ -2,7 +2,7 @@
 
 **Difficulty:** Easy
 
-**Language:** Java
+**Language:** Python3
 
 ## Problem
 
@@ -10,7 +10,7 @@ https://leetcode.com/problems/two-sum/
 
 ## Solution
 
-Automatically synchronized from LeetCode on November 6, 2026.
+Automatically synchronized from LeetCode on November 12, 2026.
 
 ## Complexity
 
